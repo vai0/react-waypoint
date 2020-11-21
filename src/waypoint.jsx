@@ -148,7 +148,7 @@ export class Waypoint extends React.PureComponent {
     while (node.parentNode) {
       node = node.parentNode;
 
-      if (node === document.body) {
+      if (node === document.body || !(node instanceof HTMLElement)) {
         // We've reached all the way to the root node.
         return window;
       }
